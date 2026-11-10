@@ -459,3 +459,27 @@ select option { background: #1e0a33; color: var(--text); }
     transition: none !important;
   }
 }
+
+/* ---------- Custom scrollbars ---------- */
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #12041f; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--pink), var(--pink-deep));
+  border-radius: 999px;
+  border: 2px solid #12041f;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--pink); }
+
+/* Firefox */
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--pink) #12041f;
+  }
+}
+
+/* Sidebar: slimmer and see-through track so it blends in */
+.sidebar::-webkit-scrollbar { width: 6px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { border: 0; }
