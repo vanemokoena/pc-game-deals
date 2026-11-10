@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vanessa's Pixel Blooms</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Floating background shapes (decorative) -->
+  <div class="bg-shapes" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Top menu bar -->
+  <header class="navbar">
+    <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open filters" aria-controls="sidebar" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a class="brand" href="#top">
+      <svg class="logo" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 8h10a5 5 0 0 1 4.9 6l-.7 3.2a2.4 2.4 0 0 1-4.1 1.1L15.6 16H8.4l-1.5 2.3a2.4 2.4 0 0 1-4.1-1.1L2.1 14A5 5 0 0 1 7 8Z" />
+        <circle cx="8" cy="12" r="1.2" class="dot" />
+        <circle cx="16.5" cy="11" r="1" class="dot" />
+        <circle cx="18.5" cy="13" r="1" class="dot" />
+      </svg>
+      <span>VP <b>Blooms in every season</b></span>
+    </a>
+
+    <nav class="nav-tabs" aria-label="Main menu">
+      <button type="button" class="nav-tab" data-view="all">All Deals</button>
+      <button type="button" class="nav-tab" data-view="sale">On Sale</button>
+      <button type="button" class="nav-tab" data-view="best">Best Discounts</button>
+    </nav>
+  </header>
+
+  <div class="backdrop" id="backdrop"></div>
+
+  <div class="layout" id="top">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar" aria-label="Filters">
+      <section class="panel">
+        <h3>Search</h3>
+        <label class="search">
+          <span class="visually-hidden">Search titles</span>
+          <input type="search" id="search" placeholder="Search games…" autocomplete="off" />
+        </label>
+      </section>
+
+      <section class="panel">
+        <h3>Filter</h3>
+        <label class="toggle">
+          <input type="checkbox" id="only-sale" />
+          <span class="switch" aria-hidden="true"></span>
+          On sale only
+        </label>
+        <label class="select-label" for="sort">Sort by</label>
+        <select id="sort">
+          <option value="default">Featured</option>
+          <option value="price">Lowest price</option>
+          <option value="discount">Biggest discount</option>
+          <option value="title">Title A–Z</option>
+        </select>
+      </section>
+
+      <section class="panel">
+        <h3>Stores</h3>
+        <div class="store-list" id="store-list"></div>
+      </section>
+
+      <section class="panel stats" aria-live="polite">
+        <h3>Right now</h3>
+        <div class="stat"><span class="stat-num" id="stat-count">0</span><span class="stat-label">games shown</span></div>
+        <div class="stat"><span class="stat-num" id="stat-best">0%</span><span class="stat-label">best discount</span></div>
+        <div class="stat"><span class="stat-text" id="stat-cheapest">—</span><span class="stat-label">cheapest</span></div>
+      </section>
+
+      <button type="button" id="load-live" class="live-btn">Load live deals (CheapShark)</button>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content">
+      <section class="hero">
+        <p class="hero-kicker">Welcome to</p>
+        <h1>Pixel Bloom</h1>
+        <p class="subtitle" id="source-note">Fresh deals, picked for you. Prices in Rand (R)</p>
+      </section>
+
+      <p id="summary" class="summary" aria-live="polite"></p>
+      <ul id="deals" class="deals animate"></ul>
+    </main>
+  </div>
+  
+
+  <script src="deals.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
