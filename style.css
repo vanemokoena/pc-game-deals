@@ -480,6 +480,5 @@ select option { background: #1e0a33; color: var(--text); }
 }
 
 /* Sidebar: slimmer and see-through track so it blends in */
-.sidebar::-webkit-scrollbar { width: 6px; }
-.sidebar::-webkit-scrollbar-track { background: transparent; }
-.sidebar::-webkit-scrollbar-thumb { border: 0; }
+.sidebar { scrollbar-width: none; }
+.sidebar::-webkit-scrollbar { display: none; }
