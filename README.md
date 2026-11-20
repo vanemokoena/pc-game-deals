@@ -6,6 +6,8 @@
 
 A small web page that lists PC game deals, shows each sale price, and tags discounted games with **ON SALE**. Built with plain HTML, CSS and JavaScript (no frameworks, no build step), in a dark purple and magenta theme.
 
+<img width="1594" height="814" alt="Screenshot 2026-11-20 213306" src="https://github.com/user-attachments/assets/65adb311-ddaa-4485-9618-29d8482193b9" />
+
 ## Features
 
 - Live search by game title
